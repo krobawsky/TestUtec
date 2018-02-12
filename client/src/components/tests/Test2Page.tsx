@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { url, submitForm } from '../../util';
 
 import TestInformation from './TestInformation';
-import TestPreguntas from './TestPreguntas';
+import Test2Preguntas from './Test2Preguntas';
 
 // import '../../../public/js/materialize.js';
 // import '../../../public/js/materialize.min.js';
@@ -29,12 +29,11 @@ export default class TestPage extends React.Component<ITestPageProps, ITestPageS
   }
 
   componentDidMount() {
-    const requestUrl = url('api/tests/estres');
+    const requestUrl = url('api/tests/millon');
 
     fetch(requestUrl)
         .then(response => response.json())
         .then(test => { console.log('test', test); this.setState({ test }); });
-
   }
 
   onChange(value) {
@@ -53,7 +52,7 @@ export default class TestPage extends React.Component<ITestPageProps, ITestPageS
     return (
       <span>
         <TestInformation test={test} />
-        <TestPreguntas params={test.preguntas}/>
+        <Test2Preguntas params={test.preguntas}/>
       </span>
     );
   }

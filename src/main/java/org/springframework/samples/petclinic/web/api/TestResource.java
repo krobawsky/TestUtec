@@ -26,9 +26,14 @@ public class TestResource extends AbstractResourceController {
         return this.clinicService.findTests();
     }
     
-    @RequestMapping(value = "/tests/{testId}", method = RequestMethod.GET)
-	public Test findTest(@PathVariable("testId") int testId) {
-		return retrieveTest(testId);
+    @RequestMapping(value = "/tests/estres", method = RequestMethod.GET)
+	public Test findTest() {
+		return retrieveTest(1);
+	}
+    
+    @RequestMapping(value = "/tests/millon", method = RequestMethod.GET)
+	public Test findTest2() {
+		return retrieveTest(2);
 	}
     
     private Test retrieveTest(int testId) {

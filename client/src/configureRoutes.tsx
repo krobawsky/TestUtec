@@ -27,6 +27,7 @@ import AgregarAlumnoPage from './components/grupos/AgregarAlumnoPage';
 import FindGruposPage from './components/grupos/FindGruposPage';
 import TestsPage from './components/tests/TestsPage';
 import TestPage from './components/tests/TestPage';
+import Test2Page from './components/tests/Test2Page';
 import papel from './components/papel';
 import UsersPage from './components/user/UsersPage';
 import EmailPage from './components/email/EmailPage';
@@ -69,7 +70,8 @@ export default () => (
     <Route path='/grupo/list' component={FindGruposPage} />
     <Route path='/grupos/detalle/:grupoId' component={GrupoPage} />
     <Route path='/tests' component={TestsPage} />
-    <Route path='/tests/:testId' component={TestPage} />
+    <Route path='/tests/estres' component={TestPage} />
+    <Route path='/tests/millon' component={Test2Page} />
     <Route path='/error' component={ErrorPage} />
     <Route path='*' component={NotFoundPage} />
   </Route>
