@@ -103,6 +103,7 @@ export interface ITest extends INamedEntity {
 export interface IPregunta extends IBaseEntity {
   pregunta: string;
   tipo: IPreguntaTipo;
+  tipos: any;
   posicion: number;
   alternativas: IAlternativa[];
 };

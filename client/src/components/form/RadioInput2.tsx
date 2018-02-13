@@ -12,7 +12,7 @@ import { RadioGroup, RadioButton, ReversedRadioButton } from '../../../node_modu
   alternativa: string;
 };
 
-export default ({object, error, name, pos, question, options, onChange}: { object: any, error: IError, name: any, pos: string, question: string, options: IRadioOption[], onChange: IInputChangeHandler3 }) => {
+export default ({object, error, name, pos, question, options, onChange}: { object: any, error: IError, name: any, pos: number, question: string, options: IRadioOption[], onChange: IInputChangeHandler3 }) => {
 
   const handleOnChange = value => {
     // console.log('Value:', +value);

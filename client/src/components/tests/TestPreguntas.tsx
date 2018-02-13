@@ -138,6 +138,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
       const agregar = Object.assign({}, results13, {[question]: +value });
       this.setState({ results13: agregar });
     }
+    console.log( results1 );
   }
 
   onSubmit(event) {
