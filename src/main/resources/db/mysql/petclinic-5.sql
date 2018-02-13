@@ -363,6 +363,23 @@ INSERT INTO `pregunta` (`id`, `test_id`, `tipo_id`, `pregunta`, `posicion`) VALU
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `pregunta_tipo`
+--
+
+CREATE TABLE `pregunta_tipo` (
+  `pregunta_id` int(11) NOT NULL,
+  `tipo_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pregunta_tipo`
+--
+
+INSERT INTO `pregunta_tipo` (`pregunta_id`, `tipo_id`) VALUES
+(230, 15),
+(230, 16);
+
+--
 -- Estructura de tabla para la tabla `pregunta_alternativa`
 --
 
@@ -1101,6 +1118,13 @@ ALTER TABLE `pregunta`
   ADD PRIMARY KEY (`id`,`test_id`),
   ADD KEY `fk_pregunta_test1_idx` (`test_id`),
   ADD KEY `fk_pregunta_tipo_idx` (`tipo_id`);
+
+--
+-- Indices de la tabla `pregunta_tipo`
+--
+ALTER TABLE `pregunta_tipo`
+  ADD PRIMARY KEY (`pregunta_id`,`tipo_id`),
+  ADD KEY `fk_tipo_pregunta` (`tipo_id`);
 
 --
 -- Indices de la tabla `pregunta_alternativa`

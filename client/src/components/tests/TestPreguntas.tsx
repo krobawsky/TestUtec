@@ -95,7 +95,6 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
     const { editableAlter, resultsTotal, results1, results2, results3, results4, results5, results6, results7, results8, results9, results10, results11, results12, results13 } = this.state;
     // console.log( name );
 
-    // console.log( results[name] );
     const agregarTotal = Object.assign({}, resultsTotal, {[question]: +value });
     this.setState({ resultsTotal: agregarTotal });
 
@@ -513,7 +512,8 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
       }
     }
   }
-   test  = () => {
+
+  test  = () => {
     this.setState ({
       progress: 'progress scale-transition scale-in'
     });
