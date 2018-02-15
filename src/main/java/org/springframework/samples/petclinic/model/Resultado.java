@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "resultado")
-public class Resultado extends NamedEntity {
+public class Resultado extends BaseEntity {
 	
 	@Column(name="test")
 	private String test;

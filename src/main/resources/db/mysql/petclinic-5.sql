@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 13, 2018 at 10:57 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 15-02-2018 a las 20:30:57
+-- Versión del servidor: 5.7.14
+-- Versión de PHP: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `utec`
+-- Base de datos: `utec`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alternativa`
+-- Estructura de tabla para la tabla `alternativa`
 --
 
 CREATE TABLE `alternativa` (
@@ -33,7 +33,7 @@ CREATE TABLE `alternativa` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `alternativa`
+-- Volcado de datos para la tabla `alternativa`
 --
 
 INSERT INTO `alternativa` (`id`, `alternativa`, `value`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `alternativa` (`id`, `alternativa`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alumno`
+-- Estructura de tabla para la tabla `alumno`
 --
 
 CREATE TABLE `alumno` (
@@ -64,18 +64,19 @@ CREATE TABLE `alumno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `alumno`
+-- Volcado de datos para la tabla `alumno`
 --
 
 INSERT INTO `alumno` (`id`, `codigo`, `password`, `correo`, `ingreso`, `carrera`, `edad`, `genero`, `first_name`, `last_name`) VALUES
 (1, 105678, '123456', 'eleen@gmail.com', 2016, 'C15', 18, 'F', 'Stefanny', 'Aquino'),
 (2, 108765, '123456', 'raul@gmail.com', 2015, 'C16', 20, 'M', 'Raul', 'Ramos'),
-(3, 104567, '123456', 'maria@gmail.com', 2016, 'C15', 19, 'F', 'Maria', 'Perez');
+(3, 104567, '123456', 'maria@gmail.com', 2016, 'C15', 19, 'F', 'Maria', 'Perez'),
+(4, 142145, 'abc', 'rberrospi@gmail.com', 2016, 'C15', 18, 'M', 'Ricardo', 'Berrospi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alumno_has_grupo`
+-- Estructura de tabla para la tabla `alumno_has_grupo`
 --
 
 CREATE TABLE `alumno_has_grupo` (
@@ -84,7 +85,7 @@ CREATE TABLE `alumno_has_grupo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `alumno_has_grupo`
+-- Volcado de datos para la tabla `alumno_has_grupo`
 --
 
 INSERT INTO `alumno_has_grupo` (`alumno_idalumno`, `grupo_idgrupo`) VALUES
@@ -96,7 +97,7 @@ INSERT INTO `alumno_has_grupo` (`alumno_idalumno`, `grupo_idgrupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `grupo`
+-- Estructura de tabla para la tabla `grupo`
 --
 
 CREATE TABLE `grupo` (
@@ -106,7 +107,7 @@ CREATE TABLE `grupo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `grupo`
+-- Volcado de datos para la tabla `grupo`
 --
 
 INSERT INTO `grupo` (`id`, `name`, `num_alumnos`) VALUES
@@ -116,7 +117,7 @@ INSERT INTO `grupo` (`id`, `name`, `num_alumnos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pregunta`
+-- Estructura de tabla para la tabla `pregunta`
 --
 
 CREATE TABLE `pregunta` (
@@ -128,7 +129,7 @@ CREATE TABLE `pregunta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pregunta`
+-- Volcado de datos para la tabla `pregunta`
 --
 
 INSERT INTO `pregunta` (`id`, `test_id`, `tipo_id`, `pregunta`, `posicion`) VALUES
@@ -165,7 +166,7 @@ INSERT INTO `pregunta` (`id`, `test_id`, `tipo_id`, `pregunta`, `posicion`) VALU
 (34, 1, 5, 'Hablo con alguien para averiguar más sobre el problema', 31),
 (35, 1, 6, 'Converso con alguien sobre lo que me está sucediedo', 32),
 (36, 1, 7, 'Aprendo algo de experiencia', 33),
-(37, 1, 8, 'Me acostumbro ala idea de qe el problema ya ha sucedido', 34),
+(37, 1, 8, 'Me acostumbro a la idea de que el problema ya ha sucedido', 34),
 (38, 1, 9, 'Trato de encontrar consuelo en mi religión', 35),
 (39, 1, 10, 'Siento mucha perturbación emocional y expreso esos sentimientos a otros', 36),
 (40, 1, 11, 'Me comporto como si no hubiese ocurrido el problema', 37),
@@ -363,7 +364,7 @@ INSERT INTO `pregunta` (`id`, `test_id`, `tipo_id`, `pregunta`, `posicion`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pregunta_alternativa`
+-- Estructura de tabla para la tabla `pregunta_alternativa`
 --
 
 CREATE TABLE `pregunta_alternativa` (
@@ -372,7 +373,7 @@ CREATE TABLE `pregunta_alternativa` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pregunta_alternativa`
+-- Volcado de datos para la tabla `pregunta_alternativa`
 --
 
 INSERT INTO `pregunta_alternativa` (`pregunta_id`, `alternativa_id`) VALUES
@@ -840,7 +841,7 @@ INSERT INTO `pregunta_alternativa` (`pregunta_id`, `alternativa_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pregunta_tipo`
+-- Estructura de tabla para la tabla `pregunta_tipo`
 --
 
 CREATE TABLE `pregunta_tipo` (
@@ -849,165 +850,423 @@ CREATE TABLE `pregunta_tipo` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pregunta_tipo`
+-- Volcado de datos para la tabla `pregunta_tipo`
 --
 
 INSERT INTO `pregunta_tipo` (`pregunta_id`, `tipo_id`) VALUES
+(56, 22),
+(56, 23),
+(56, 24),
+(56, 26),
 (57, 18),
 (57, 19),
+(57, 22),
 (58, 19),
 (58, 21),
 (59, 20),
+(59, 22),
+(59, 24),
+(59, 25),
+(59, 26),
+(61, 22),
+(61, 26),
 (62, 20),
 (62, 21),
+(62, 23),
+(62, 24),
+(62, 25),
 (63, 19),
+(63, 27),
 (64, 21),
+(64, 24),
+(64, 26),
 (65, 18),
 (65, 20),
+(65, 27),
 (67, 20),
+(67, 22),
+(67, 23),
+(67, 24),
+(67, 26),
 (68, 18),
 (69, 18),
 (69, 19),
 (69, 21),
+(69, 22),
+(70, 22),
+(70, 23),
+(71, 22),
+(71, 26),
+(71, 27),
+(73, 27),
 (74, 18),
 (74, 19),
 (74, 21),
 (75, 18),
 (75, 21),
+(75, 23),
+(75, 25),
 (76, 19),
 (76, 20),
+(76, 24),
+(76, 25),
+(76, 26),
 (77, 18),
+(77, 22),
+(77, 23),
+(77, 26),
 (78, 19),
+(78, 26),
+(78, 27),
 (80, 18),
 (80, 19),
+(80, 26),
+(80, 27),
 (82, 19),
 (83, 18),
 (83, 19),
 (83, 20),
 (83, 21),
+(83, 22),
+(83, 26),
+(83, 27),
+(85, 23),
+(85, 24),
 (86, 20),
+(86, 22),
+(86, 24),
+(86, 27),
 (87, 19),
+(87, 22),
+(87, 23),
+(87, 24),
+(87, 25),
 (88, 18),
 (89, 18),
 (89, 19),
 (89, 20),
+(89, 23),
 (92, 21),
+(92, 22),
+(93, 23),
+(93, 24),
 (94, 21),
+(94, 25),
 (95, 20),
 (95, 21),
+(95, 24),
+(95, 25),
 (96, 20),
 (96, 21),
+(96, 22),
+(96, 24),
 (97, 20),
 (97, 21),
+(97, 22),
+(97, 23),
+(97, 24),
+(97, 27),
 (98, 20),
 (98, 21),
+(98, 22),
+(98, 23),
+(98, 24),
+(98, 25),
+(98, 26),
+(99, 23),
+(99, 24),
 (100, 19),
+(100, 22),
+(100, 27),
 (101, 18),
+(101, 25),
 (102, 18),
 (102, 19),
 (103, 18),
 (103, 21),
+(103, 23),
+(103, 25),
 (104, 19),
 (104, 20),
+(105, 25),
+(105, 26),
 (106, 21),
+(106, 22),
+(106, 26),
+(106, 27),
 (108, 18),
 (109, 20),
+(109, 27),
+(110, 22),
+(110, 23),
+(110, 26),
 (111, 19),
 (111, 21),
+(111, 27),
 (112, 19),
 (112, 20),
+(112, 27),
+(113, 24),
+(113, 26),
 (115, 18),
 (115, 20),
 (115, 21),
+(115, 22),
+(115, 25),
 (116, 21),
+(116, 25),
 (118, 19),
+(118, 22),
+(118, 27),
+(119, 23),
+(119, 24),
+(119, 25),
+(119, 26),
+(120, 27),
 (121, 21),
+(121, 24),
+(121, 25),
+(121, 26),
+(126, 24),
+(126, 27),
+(128, 23),
+(128, 26),
+(128, 27),
 (129, 20),
+(129, 23),
+(129, 24),
+(129, 25),
+(129, 26),
+(129, 27),
 (130, 20),
+(130, 25),
 (132, 19),
 (132, 20),
 (132, 21),
+(132, 23),
+(132, 24),
+(132, 25),
+(132, 26),
+(132, 27),
 (133, 18),
 (133, 20),
+(133, 22),
+(133, 23),
+(133, 24),
+(133, 25),
+(135, 22),
+(135, 23),
+(135, 24),
 (136, 18),
 (136, 19),
 (136, 20),
+(136, 22),
+(136, 23),
+(136, 25),
+(136, 27),
+(137, 24),
+(137, 26),
+(137, 27),
 (138, 18),
 (138, 19),
+(139, 24),
 (140, 18),
+(140, 22),
+(140, 23),
 (141, 21),
+(141, 22),
+(141, 23),
+(141, 24),
+(141, 25),
+(141, 26),
+(142, 23),
+(143, 25),
 (144, 21),
+(144, 22),
 (146, 20),
 (146, 21),
+(146, 22),
+(146, 23),
+(146, 24),
 (147, 20),
+(147, 23),
+(147, 25),
+(149, 23),
 (150, 18),
 (150, 21),
+(150, 24),
+(150, 25),
+(150, 26),
 (152, 20),
+(154, 27),
 (156, 20),
+(156, 23),
+(156, 24),
+(156, 26),
 (157, 19),
 (158, 18),
 (158, 21),
+(158, 22),
+(158, 23),
+(158, 25),
+(159, 23),
+(159, 26),
 (161, 18),
 (161, 19),
 (161, 20),
+(161, 22),
+(161, 24),
+(161, 27),
+(162, 24),
+(162, 26),
 (163, 18),
 (164, 19),
 (165, 19),
 (165, 20),
+(165, 26),
+(165, 27),
 (166, 18),
 (166, 21),
+(166, 22),
+(166, 23),
+(166, 25),
 (167, 19),
 (168, 19),
+(168, 23),
+(170, 24),
+(170, 26),
+(170, 27),
+(171, 23),
 (173, 19),
 (175, 19),
+(175, 26),
+(175, 27),
+(176, 24),
+(176, 27),
+(178, 26),
 (179, 18),
 (180, 18),
 (180, 19),
 (180, 20),
 (180, 21),
+(180, 22),
 (181, 21),
+(181, 22),
+(181, 25),
 (183, 21),
+(183, 25),
+(183, 26),
+(183, 27),
+(184, 22),
+(184, 23),
+(184, 24),
+(184, 26),
 (185, 21),
+(185, 22),
+(185, 23),
+(186, 22),
+(187, 27),
 (188, 19),
 (188, 20),
 (188, 21),
+(188, 27),
+(189, 22),
+(189, 24),
+(189, 25),
+(190, 22),
+(190, 24),
+(190, 26),
 (192, 21),
+(192, 22),
+(193, 25),
 (194, 19),
+(194, 26),
+(194, 27),
+(195, 23),
 (196, 18),
 (196, 19),
+(196, 27),
 (197, 18),
 (197, 21),
+(197, 22),
+(197, 23),
+(197, 24),
+(198, 22),
+(199, 23),
 (200, 20),
+(200, 24),
+(200, 25),
+(200, 27),
+(201, 22),
+(201, 24),
 (202, 19),
 (202, 20),
+(202, 23),
+(202, 24),
+(203, 24),
+(203, 25),
 (204, 20),
+(204, 22),
+(204, 25),
+(204, 26),
 (205, 18),
 (205, 19),
+(208, 25),
+(209, 27),
 (210, 19),
+(210, 24),
+(210, 25),
+(210, 26),
+(210, 27),
+(211, 26),
+(212, 23),
 (213, 19),
 (213, 21),
+(213, 22),
 (214, 18),
 (214, 20),
+(214, 25),
+(214, 26),
 (215, 18),
 (215, 19),
 (216, 18),
+(216, 25),
 (217, 20),
 (217, 21),
+(217, 23),
 (218, 19),
 (218, 20),
+(218, 24),
+(218, 25),
+(220, 22),
+(220, 23),
+(220, 24),
+(220, 26),
 (221, 21),
+(221, 22),
+(221, 24),
+(222, 27),
 (223, 20),
+(223, 27),
 (225, 21),
+(225, 22),
 (226, 19),
 (226, 21),
+(226, 22),
+(226, 23),
+(226, 26),
+(226, 27),
 (227, 21),
+(227, 22),
+(227, 23),
 (228, 20),
-(228, 21);
+(228, 21),
+(229, 27);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resultado`
+-- Estructura de tabla para la tabla `resultado`
 --
 
 CREATE TABLE `resultado` (
@@ -1020,18 +1279,19 @@ CREATE TABLE `resultado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `resultado`
+-- Volcado de datos para la tabla `resultado`
 --
 
 INSERT INTO `resultado` (`id`, `test`, `descripcion`, `date`, `alumno_idalumno`, `name`) VALUES
 (1, 'Test del Estres', 'Descripcion', '2018-01-25', 1, 'Resultado 1'),
 (2, 'Test del Estres', 'descripcion', '2018-02-14', 2, 'test'),
-(3, 'Test del Estres', '', '2018-02-09', 3, 'Test del Estres');
+(3, 'Test del Estres', '', '2018-02-09', 3, 'Test del Estres'),
+(4, 'Test de Estres', '', '2018-02-15', 4, 'test');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `test`
+-- Estructura de tabla para la tabla `test`
 --
 
 CREATE TABLE `test` (
@@ -1043,7 +1303,7 @@ CREATE TABLE `test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `test`
+-- Volcado de datos para la tabla `test`
 --
 
 INSERT INTO `test` (`id`, `name`, `tipo`, `descripcion`, `num_preguntas`) VALUES
@@ -1053,7 +1313,7 @@ INSERT INTO `test` (`id`, `name`, `tipo`, `descripcion`, `num_preguntas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `test_has_alumno`
+-- Estructura de tabla para la tabla `test_has_alumno`
 --
 
 CREATE TABLE `test_has_alumno` (
@@ -1062,7 +1322,7 @@ CREATE TABLE `test_has_alumno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `test_has_alumno`
+-- Volcado de datos para la tabla `test_has_alumno`
 --
 
 INSERT INTO `test_has_alumno` (`test_idtest`, `alumno_idalumno`) VALUES
@@ -1071,7 +1331,7 @@ INSERT INTO `test_has_alumno` (`test_idtest`, `alumno_idalumno`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipos`
+-- Estructura de tabla para la tabla `tipos`
 --
 
 CREATE TABLE `tipos` (
@@ -1080,7 +1340,7 @@ CREATE TABLE `tipos` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tipos`
+-- Volcado de datos para la tabla `tipos`
 --
 
 INSERT INTO `tipos` (`id`, `name`) VALUES
@@ -1105,7 +1365,7 @@ INSERT INTO `tipos` (`id`, `name`) VALUES
 (19, 'Evitativo'),
 (20, 'Dependiente'),
 (21, 'Histriónico'),
-(22, 'Narcisita'),
+(22, 'Narcisista'),
 (23, 'Antisocial'),
 (24, 'Agresivo-sádico'),
 (25, 'Compulsivo'),
@@ -1127,7 +1387,7 @@ INSERT INTO `tipos` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `types`
+-- Estructura de tabla para la tabla `types`
 --
 
 CREATE TABLE `types` (
@@ -1136,7 +1396,7 @@ CREATE TABLE `types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `types`
+-- Volcado de datos para la tabla `types`
 --
 
 INSERT INTO `types` (`id`, `name`) VALUES
@@ -1150,7 +1410,7 @@ INSERT INTO `types` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Estructura de tabla para la tabla `user`
 --
 
 CREATE TABLE `user` (
@@ -1163,7 +1423,7 @@ CREATE TABLE `user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `password`, `username`, `first_name`, `last_name`, `rol`) VALUES
@@ -1177,7 +1437,7 @@ INSERT INTO `user` (`id`, `password`, `username`, `first_name`, `last_name`, `ro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `valores`
+-- Estructura de tabla para la tabla `valores`
 --
 
 CREATE TABLE `valores` (
@@ -1189,7 +1449,7 @@ CREATE TABLE `valores` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `valores`
+-- Volcado de datos para la tabla `valores`
 --
 
 INSERT INTO `valores` (`id`, `resultado_id`, `tipo`, `value`, `descripcion`) VALUES
@@ -1232,23 +1492,23 @@ INSERT INTO `valores` (`id`, `resultado_id`, `tipo`, `value`, `descripcion`) VAL
 (37, 3, 'AE', 4, 'Posee una Análisis de las emociones muy alto');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `alternativa`
+-- Indices de la tabla `alternativa`
 --
 ALTER TABLE `alternativa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `alumno`
+-- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `alumno_has_grupo`
+-- Indices de la tabla `alumno_has_grupo`
 --
 ALTER TABLE `alumno_has_grupo`
   ADD PRIMARY KEY (`alumno_idalumno`,`grupo_idgrupo`),
@@ -1256,13 +1516,13 @@ ALTER TABLE `alumno_has_grupo`
   ADD KEY `fk_alumno_has_grupo_alumno1_idx` (`alumno_idalumno`);
 
 --
--- Indexes for table `grupo`
+-- Indices de la tabla `grupo`
 --
 ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pregunta`
+-- Indices de la tabla `pregunta`
 --
 ALTER TABLE `pregunta`
   ADD PRIMARY KEY (`id`,`test_id`),
@@ -1270,34 +1530,34 @@ ALTER TABLE `pregunta`
   ADD KEY `fk_pregunta_tipo_idx` (`tipo_id`);
 
 --
--- Indexes for table `pregunta_alternativa`
+-- Indices de la tabla `pregunta_alternativa`
 --
 ALTER TABLE `pregunta_alternativa`
   ADD PRIMARY KEY (`pregunta_id`,`alternativa_id`),
   ADD KEY `fk_alternativa_pregunta` (`alternativa_id`);
 
 --
--- Indexes for table `pregunta_tipo`
+-- Indices de la tabla `pregunta_tipo`
 --
 ALTER TABLE `pregunta_tipo`
   ADD PRIMARY KEY (`pregunta_id`,`tipo_id`),
   ADD KEY `fk_tipo_pregunta` (`tipo_id`);
 
 --
--- Indexes for table `resultado`
+-- Indices de la tabla `resultado`
 --
 ALTER TABLE `resultado`
   ADD PRIMARY KEY (`id`,`alumno_idalumno`),
   ADD KEY `fk_resultado_alumno1_idx` (`alumno_idalumno`);
 
 --
--- Indexes for table `test`
+-- Indices de la tabla `test`
 --
 ALTER TABLE `test`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `test_has_alumno`
+-- Indices de la tabla `test_has_alumno`
 --
 ALTER TABLE `test_has_alumno`
   ADD PRIMARY KEY (`test_idtest`,`alumno_idalumno`),
@@ -1305,26 +1565,26 @@ ALTER TABLE `test_has_alumno`
   ADD KEY `fk_test_has_alumno_test1_idx` (`test_idtest`);
 
 --
--- Indexes for table `tipos`
+-- Indices de la tabla `tipos`
 --
 ALTER TABLE `tipos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `types`
+-- Indices de la tabla `types`
 --
 ALTER TABLE `types`
   ADD PRIMARY KEY (`id`),
   ADD KEY `name` (`name`);
 
 --
--- Indexes for table `user`
+-- Indices de la tabla `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `valores`
+-- Indices de la tabla `valores`
 --
 ALTER TABLE `valores`
   ADD PRIMARY KEY (`id`),
@@ -1332,21 +1592,21 @@ ALTER TABLE `valores`
   ADD KEY `valores_name` (`value`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `alternativa`
+-- AUTO_INCREMENT de la tabla `alternativa`
 --
 ALTER TABLE `alternativa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `alumno`
+-- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `grupo`
+-- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;

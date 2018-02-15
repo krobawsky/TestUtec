@@ -30,7 +30,6 @@ public class Valores extends BaseEntity {
     @JsonIgnore
     private Resultado resultado;
     
-    
 
 	public Integer getValue() {
 		return value;

@@ -19,10 +19,10 @@ interface IPregProps {
   results4Props?: {};
   results5Props?: {};
   results6AProps?: {};
-  results6bProps?: {};
+  results6BProps?: {};
   results7Props?: {};
   results8AProps?: {};
-  results8bProps?: {};
+  results8BProps?: {};
   resultsSProps?: {};
   resultsCProps?: {};
   resultsCCrops?: {};
@@ -50,10 +50,10 @@ interface IResultState {
   results4?: {};
   results5?: {};
   results6A?: {};
-  results6b?: {};
+  results6B?: {};
   results7?: {};
   results8A?: {};
-  results8b?: {};
+  results8B?: {};
   resultsS?: {};
   resultsC?: {};
   resultsP?: {};
@@ -106,10 +106,10 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
       results4: Object.assign({}, props.results4Props),
       results5: Object.assign({}, props.results5Props),
       results6A: Object.assign({}, props.results6AProps),
-      results6b: Object.assign({}, props.results6bProps),
+      results6B: Object.assign({}, props.results6BProps),
       results7: Object.assign({}, props.results7Props),
       results8A: Object.assign({}, props.results8AProps),
-      results8b: Object.assign({}, props.results8bProps),
+      results8B: Object.assign({}, props.results8BProps),
       resultsS: Object.assign({}, props.resultsSProps),
       resultsC: Object.assign({}, props.resultsCProps),
       resultsP: Object.assign({}, props.resultsCCrops),
@@ -131,7 +131,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
   }
 
   onInputChange(name: any, pos: number, question: string, value: any) {
-    const { editableAlter, resultsTotal, resultsV, resultsX, resultsY, resultsZ, results1, results2, results3, results4, results5, results6A, results6b, results7, results8A, results8b, resultsS, resultsC, resultsP, resultsA, resultsH, resultsN, resultsD, resultsB, resultsT, resultsSS, resultsCC, resultsPP  } = this.state;
+    const { editableAlter, resultsTotal, resultsV, resultsX, resultsY, resultsZ, results1, results2, results3, results4, results5, results6A, results6B, results7, results8A, results8B, resultsS, resultsC, resultsP, resultsA, resultsH, resultsN, resultsD, resultsB, resultsT, resultsSS, resultsCC, resultsPP  } = this.state;
     // console.log( name );
     for (const propiedad in name) {
       if (name.hasOwnProperty(propiedad)) {
@@ -139,7 +139,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
         const tipo = JSON.parse(JSON.stringify(name[propiedad].name));
         console.log( tipo );
 
-        const tipos = ['Esquizoide', 'Evitativo', 'Dependiente', 'Histriónico', 'Narcisita'];
+        const tipos = ['Esquizoide', 'Evitativo', 'Dependiente', 'Histriónico', 'Narcisista', 'Antisocial', 'Agresivo-sádico', 'Compulsivo', 'Pasivo-agresivo', 'Autoderrotista'];
         if ( tipo === tipos[0] ) {
           const poss3 = [2, 13, 19, 34, 81, 143, 161];
           const poss2 = [10, 33, 47, 83, 106, 124, 150, 20, 48];
@@ -270,6 +270,136 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
             }
           }
         }
+        if ( tipo === tipos[5] ) {
+          const poss3 = [7, 40, 92, 94, 103, 116, 130, 147, 162, 172];
+          const poss2 = [1, 12, 20, 22, 38, 43, 55, 73, 74, 80, 86, 87, 91, 129, 142, 144, 165, 42, 78, 81];
+          const poss1 = [15, 32, 44, 48, 64, 85, 101, 104, 111, 113, 140, 157, 171, 34, 77];
+          for (let e of poss3) {
+            if (pos === e) {
+              const val = value * 3;
+              const agregar = Object.assign({}, results6A, {[question]: val });
+              this.setState({ results6A: agregar });
+            }
+          }
+          for (let e of poss2) {
+            if (pos === e) {
+              const val = value * 2;
+              const agregar = Object.assign({}, results6A, {[question]: val });
+              this.setState({ results6A: agregar });
+            }
+          }
+          for (let e of poss1) {
+            if (pos === e) {
+              const val = value * 1;
+              const agregar = Object.assign({}, results6A, {[question]: val });
+              this.setState({ results6A: agregar });
+            }
+          }
+        }
+        if ( tipo === tipos[6] ) {
+          const poss3 = [4, 9, 12, 30, 41, 44, 101, 134, 148, 163];
+          const poss2 = [1, 21, 64, 74, 82, 84, 91, 107, 115, 121, 129, 155, 166, 43, 77, 78];
+          const poss1 = [7, 32, 38, 40, 43, 58, 66, 80, 86, 95, 135, 142, 146, 147, 165, 31, 71, 106, 145];
+          for (let e of poss3) {
+            if (pos === e) {
+              const val = value * 3;
+              const agregar = Object.assign({}, results6B, {[question]: val });
+              this.setState({ results6B: agregar });
+            }
+          }
+          for (let e of poss2) {
+            if (pos === e) {
+              const val = value * 2;
+              const agregar = Object.assign({}, results6B, {[question]: val });
+              this.setState({ results6B: agregar });
+            }
+          }
+          for (let e of poss1) {
+            if (pos === e) {
+              const val = value * 1;
+              const agregar = Object.assign({}, results6B, {[question]: val });
+              this.setState({ results6B: agregar });
+            }
+          }
+        }
+        if ( tipo === tipos[7] ) {
+          const poss3 = [21, 39, 46, 61, 75, 88, 126, 138, 149, 153];
+          const poss2 = [64, 134, 148, 159, 161, 163, 20, 48, 86, 145];
+          const poss1 = [4, 32, 74, 78, 81, 7, 40, 43, 50, 60, 66, 77, 92, 95, 103, 111, 128, 155];
+          for (let e of poss3) {
+            if (pos === e) {
+              const val = value * 3;
+              const agregar = Object.assign({}, results7, {[question]: val });
+              this.setState({ results7: agregar });
+            }
+          }
+          for (let e of poss2) {
+            if (pos === e) {
+              const val = value * 2;
+              const agregar = Object.assign({}, results7, {[question]: val });
+              this.setState({ results7: agregar });
+            }
+          }
+          for (let e of poss1) {
+            if (pos === e) {
+              const val = value * 1;
+              const agregar = Object.assign({}, results7, {[question]: val });
+              this.setState({ results7: agregar });
+            }
+          }
+        }
+        if ( tipo === tipos[8] ) {
+          const poss3 = [22, 50, 55, 66, 95, 104, 107, 135, 156, 165];
+          const poss2 = [9, 16, 28, 43, 64, 73, 74, 77, 82, 86, 101, 115, 123, 128, 155, 149, 159];
+          const poss1 = [1, 4, 12, 21, 23, 25, 51, 58, 110, 120, 129, 139, 171, 6];
+          for (let e of poss3) {
+            if (pos === e) {
+              const val = value * 3;
+              const agregar = Object.assign({}, results8A, {[question]: val });
+              this.setState({ results8A: agregar });
+            }
+          }
+          for (let e of poss2) {
+            if (pos === e) {
+              const val = value * 2;
+              const agregar = Object.assign({}, results8A, {[question]: val });
+              this.setState({ results8A: agregar });
+            }
+          }
+          for (let e of poss1) {
+            if (pos === e) {
+              const val = value * 1;
+              const agregar = Object.assign({}, results8A, {[question]: val });
+              this.setState({ results8A: agregar });
+            }
+          }
+        }
+        if ( tipo === tipos[9] ) {
+          const poss3 = [23, 57, 65, 110, 121, 139, 154, 168];
+          const poss2 = [10, 16, 28, 42, 45, 51, 54, 56, 77, 106, 115, 120, 132, 145, 155];
+          const poss1 = [8, 18, 25, 31, 63, 71, 73, 81, 82, 99, 128, 133, 141, 167, 171, 173, 74];
+          for (let e of poss3) {
+            if (pos === e) {
+              const val = value * 3;
+              const agregar = Object.assign({}, results8B, {[question]: val });
+              this.setState({ results8B: agregar });
+            }
+          }
+          for (let e of poss2) {
+            if (pos === e) {
+              const val = value * 2;
+              const agregar = Object.assign({}, results8B, {[question]: val });
+              this.setState({ results8B: agregar });
+            }
+          }
+          for (let e of poss1) {
+            if (pos === e) {
+              const val = value * 1;
+              const agregar = Object.assign({}, results8B, {[question]: val });
+              this.setState({ results8B: agregar });
+            }
+          }
+        }
       }
     }
     const agregarTotal = Object.assign({}, resultsTotal, {[question]: +value });
@@ -279,8 +409,8 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
   onSubmit(event) {
     event.preventDefault();
 
-    const { editableAlter, resultsTotal, resultsV, resultsX, resultsY, resultsZ, results1, results2, results3, results4, results5, results6A, results6b, results7, results8A,
-      results8b, resultsS, resultsC, resultsP, resultsA, resultsH, resultsN, resultsD, resultsB, resultsT, resultsSS, resultsCC, resultsPP  } = this.state;
+    const { editableAlter, resultsTotal, resultsV, resultsX, resultsY, resultsZ, results1, results2, results3, results4, results5, results6A, results6B, results7, results8A,
+      results8B, resultsS, resultsC, resultsP, resultsA, resultsH, resultsN, resultsD, resultsB, resultsT, resultsSS, resultsCC, resultsPP  } = this.state;
 
     if ( Object.getOwnPropertyNames(resultsTotal).sort().length < Object.getOwnPropertyNames(editableAlter).sort().length ) {
       // alert( 'Debe contestar todas las preguntas!' );

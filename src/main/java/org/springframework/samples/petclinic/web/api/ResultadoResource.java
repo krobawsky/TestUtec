@@ -2,6 +2,8 @@ package org.springframework.samples.petclinic.web.api;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.samples.petclinic.model.Alumno;
@@ -21,7 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ResultadoResource extends AbstractResourceController{
 	
-
+	private final Logger				logger	= LoggerFactory.getLogger(getClass());
+	
 	private final ClinicService	clinicService;
 
 	@Autowired
@@ -87,7 +90,9 @@ public class ResultadoResource extends AbstractResourceController{
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void addValues(final @PathVariable("resultadoId") int resultId, final @Valid @RequestBody ValoresRequest valRequest, 
             final BindingResult bindingResult) {
-       
+		
+		logger.info("ValuableRequest: {}", valRequest);
+		
         if (bindingResult.hasErrors()) {
             throw new InvalidRequestException("Submitted val invalid", bindingResult);
         }

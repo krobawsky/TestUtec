@@ -45,7 +45,6 @@ interface IResultState {
 }
 
 interface IResultadoRequest {
-  id?: number;
   test?: string;
   descripcion?: string;
   date?: string;
@@ -138,7 +137,6 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
       const agregar = Object.assign({}, results13, {[question]: +value });
       this.setState({ results13: agregar });
     }
-    console.log( results1 );
   }
 
   onSubmit(event) {
@@ -172,7 +170,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
         descripcion: '',
         date: today
       };
-      const url = 'api/tests/results/3';
+      const url = 'api/tests/results/4';
         submitForm('PUT', url, resultRequest, (status, response) => {
           if (status === 204) {
             console.log('OK!');
@@ -202,7 +200,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -226,7 +224,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -250,7 +248,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -274,7 +272,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -299,7 +297,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -324,7 +322,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -349,7 +347,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -374,7 +372,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -399,7 +397,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -424,7 +422,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -449,7 +447,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -474,7 +472,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               console.log('res: ', response);
@@ -499,7 +497,7 @@ export default class Pregunta extends React.Component<IPregProps, IResultState> 
           };
           console.log (valuableRequest);
           // Post
-          const url = 'api/tests/results/3/values';
+          const url = 'api/tests/results/4/values';
           submitForm('POST', url, valuableRequest, (status, response) => {
             if (status === 204) {
               this.context.router.push({
