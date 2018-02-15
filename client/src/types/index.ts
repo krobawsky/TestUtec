@@ -130,7 +130,6 @@ export interface IOwner extends IPerson {
 };
 
 export interface IAlumno extends IPerson {
-
   codigo: string;
   password: string;
   correo: string;

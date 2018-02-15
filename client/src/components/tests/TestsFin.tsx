@@ -57,18 +57,18 @@ export default class TestsPage extends React.Component<void, ITetsPageState> {
           </div>
           <br/>
           <div class='col s12'>
-                <h1>Test finalizado!</h1>
-                <span className='dx'>Usted resolvió la prubea satisfactoriamente, gracias por su colaboración.</span>
-                <br/>
-            </div>
+            <h1>Test finalizado!</h1>
+            <span className='dx'>Usted resolvió la prubea satisfactoriamente, gracias por su colaboración.</span>
             <br/>
-            <div class='row'>
-              <div class='col s6'>
-                <a className='waves-effect waves-light btn left'>Regresar al Inicio</a>
-                <a className='waves-effect waves-light btn right'>Cerar Sesión</a>
-              </div>
+          </div>
+          <br/>
+          <div class='row'>
+            <div class='col s6'>
+              <a className='waves-effect waves-light btn left'>Regresar al Inicio</a>
+              <a className='waves-effect waves-light btn right'>Cerar Sesión</a>
             </div>
-          <div className='center-align'>
+          </div>
+        <div className='center-align'>
           </div>
         </div>
       </span>

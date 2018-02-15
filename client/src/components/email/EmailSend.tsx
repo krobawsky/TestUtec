@@ -4,19 +4,26 @@ import { IRouter, Link } from 'react-router';
 import { url, submitForm } from '../../util';
 
 import Input from '../form/Input';
+import SelectInput2 from '../form/SelectInput2';
+import SelectInput from '../form/SelectInput';
 
 import { Digits, NotEmpty } from '../form/Constraints';
 
 import { IInputChangeHandler, IFieldError, IError, IAlumno, IRouterContext } from '../../types';
+
 
 interface IAlumnoEditorProps {
   initialEmail?: IAlumno;
 }
 
 interface IAlumnoEditorState {
+  editableEmail?: IAlumno;
   alumno?: IAlumno;
   error?: IError;
 };
+
+
+const tip = [{ value: 1, name: 'Test 1'}, { value: 2, name: 'Test 2'}, { value: 3, name: 'Test 3'}];
 
 export default class EmailSend extends React.Component<IAlumnoEditorProps, IAlumnoEditorState> {
 
@@ -40,7 +47,7 @@ export default class EmailSend extends React.Component<IAlumnoEditorProps, IAlum
     event.preventDefault();
 
     const { alumno } = this.state;
-
+    console.log(alumno);
     const url = alumno.isNew ? '/api/send-mail' : '/api/alumno/' + alumno.id;
     submitForm(alumno.isNew ? 'POST' : 'PUT', url, alumno, (status, response) => {
       if (status === 200 || status === 201) {
@@ -55,18 +62,15 @@ export default class EmailSend extends React.Component<IAlumnoEditorProps, IAlum
     });
   }
 
-  onInputChange(name: string, value: string, fieldError: IFieldError) {
-    const { alumno, error } = this.state;
+  onInputChange(name: string, value: string) {
+    const { alumno, editableEmail, error } = this.state;
     const modifiedEmail = Object.assign({}, alumno, { [name]: value });
-    const newFieldErrors = error ? Object.assign({}, error.fieldErrors, {[name]: fieldError }) : {[name]: fieldError };
-    this.setState({
-      alumno: modifiedEmail,
-      error: { fieldErrors: newFieldErrors }
-    });
+    console.log(modifiedEmail);
+    this.setState({ alumno: modifiedEmail });
   }
 
   render() {
-    const { alumno, error } = this.state;
+    const { alumno, tipos, error } = this.state;
     return (
       <span>
 <ul id='slide-out' className='side-nav fixed'>
@@ -106,12 +110,8 @@ export default class EmailSend extends React.Component<IAlumnoEditorProps, IAlum
                       <div className='row'>
                         <div className='col s12'>
                         <div className='input-field col s12'>
-                          <select multiple >
-                          <option value='' disabled selected>Seleccione los test</option>
-                          <option value='1'>Test 1</option>
-                          <option value='2'>Test 2</option>
-                          <option value='3'>Test 3</option>
-                          </select>
+                          <SelectInput2 object={alumno} error={error} label='' name='carrera' onChange={this.onInputChange} />
+                          <SelectInput object={alumno} error={error} label='' name='edad' options={tip} onChange={this.onInputChange} />
                         </div>
                       </div>
                     </div>
